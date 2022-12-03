@@ -9,7 +9,7 @@ https://user-images.githubusercontent.com/4700433/205459912-9c9a10ac-50ce-42e3-8
 
 
 #### Setup
-Once you have created your environment the only modules you need to install are
-pip install streamlit
-pip install "openbb[all]"
-pip install streamlit-aggrid
+Once you have created your environment the only modules you need to install are  
+pip install streamlit  
+pip install "openbb[all]"  
+pip install streamlit-aggrid  
