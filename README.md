@@ -13,3 +13,8 @@ Once you have created your environment the only modules you need to install are
 pip install streamlit  
 pip install "openbb[all]"  
 pip install streamlit-aggrid  
+
+
+#### To run just type
+streamlit run Streamlit_App.py  
+
