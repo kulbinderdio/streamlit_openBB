@@ -53,3 +53,8 @@ with col2:
 data = openbb.economy.treasury()
 st.subheader('openbb.economy.treasury')
 st.line_chart(data=data,  x=None, y=None, width=0, height=0, use_container_width=True)
+
+
+st.subheader('openbb.economy.events')
+data = openbb.economy.events()
+st.dataframe(data)

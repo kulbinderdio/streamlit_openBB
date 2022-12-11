@@ -10,20 +10,6 @@ text_input = st.text_input('Symbol')
 
 st.metric('Symbol', text_input , delta=None, delta_color="inverse", help=None)
 
-st.markdown(
-    """
-    <style>
-    [data-testid="stSidebar"][aria-expanded="true"] > div:first-child{
-        width: 400px;
-    }
-    [data-testid="stSidebar"][aria-expanded="false"] > div:first-child{
-        width: 400px;
-        margin-left: -400px;
-    }
-     
-    """,
-    unsafe_allow_html=True,
-)
 
 if text_input:
     data = openbb.stocks.load(text_input)
