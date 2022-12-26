@@ -17,7 +17,9 @@ def get_candlestick_plot(
         df: pd.DataFrame,
         ma1: int,
         ma2: int,
-        ticker: str
+        ticker: str,
+        transaction_dates_sales: list = [],
+        transaction_dates_purchases: list = []
 ):
     '''
     Create the candlestick chart with two moving avgs + a plot of the volume
@@ -39,7 +41,8 @@ def get_candlestick_plot(
         shared_xaxes = True,
         vertical_spacing = 0.1,
         subplot_titles = (f'{ticker} Stock Price', 'Volume Chart'),
-        row_width = [0.3, 0.7]
+        row_width = [0.3, 0.7],
+        row_heights=150
     )
     
     fig.add_trace(
@@ -66,6 +69,12 @@ def get_candlestick_plot(
         row = 1,
         col = 1,
     )
+
+    for data in transaction_dates_sales:
+        fig.add_vline(x=data, line_width=1, line_color="red")
+
+    for data in transaction_dates_purchases:
+        fig.add_vline(x=data, line_width=1, line_color="green")
     
     fig.add_trace(
         go.Bar(x = df['Date'], y = df['Volume'], name = 'Volume'),
@@ -81,6 +90,8 @@ def get_candlestick_plot(
         rangebreaks = [{'bounds': ['sat', 'mon']}],
         rangeslider_visible = False,
     )
+
+    
     
     return fig
     
