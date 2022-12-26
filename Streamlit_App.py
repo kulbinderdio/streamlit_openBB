@@ -9,4 +9,6 @@ def main():
 
      st.write('''An example app show casing some of OpenBB's functionality''')
 
+     st.write(f"OpenBB Version : {openbb.__version__}")
+
 main()
